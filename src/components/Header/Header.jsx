@@ -1,5 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.css'
+
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    Nav,
+    NavItem,
+    NavLink,
+} from 'reactstrap';
 
 export default function Header({ setKeyword }) {
     const kword = useRef(null)
@@ -9,11 +19,15 @@ export default function Header({ setKeyword }) {
         let key = kword.current.value
         if (key === "" || !key) return
         setKeyword(key)
-      }
+    }
+
+    const [collapsed, setCollapsed] = useState(true);
+
+    const toggleNavbar = () => setCollapsed(!collapsed);
 
     return (
         <>
-            <header className='header'>
+            <header className='header desktop'>
                 <nav className='navbar'>
                     <form onSubmit={search} className='navbar-form'>
                         <input className='search' ref={kword} type="text" placeholder='Buscar gif...' />
@@ -27,6 +41,26 @@ export default function Header({ setKeyword }) {
                     </ul>
                 </nav>
             </header>
+
+            <div className='mobile'>
+                <Navbar color="faded" light>
+                    <form onSubmit={search} className='navbar-form'>
+                        <input className='search' ref={kword} type="text" placeholder='Buscar gif...' />
+                        <button className='btn' type='submit'><i className="fa-solid fa-magnifying-glass fa-xl"></i></button>
+                    </form>
+                    <NavbarToggler onClick={toggleNavbar} className="me-2" />
+                    <Collapse isOpen={!collapsed} navbar>
+                        <Nav navbar>
+                            <NavItem>
+                                <NavLink href="https://www.linkedin.com/in/anthony-guekdjian/" target='_blank' className='gh-in'><i className="fa-brands fa-linkedin fa-2xl"></i></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="https://github.com/AGuekdjian" target='_blank' className='gh-in'><i className="fa-brands fa-github fa-2xl"></i></NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+            </div>
         </>
     )
 }

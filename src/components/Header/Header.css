@@ -1,37 +1,5 @@
-.header {
-    background:  #1b4f72;
-    padding: 5px 20px;
-    height: 65px;
-}
-
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.navbar-form {
-    margin-right: 310px;
-}
-
-
-.social-menu {
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-.social-menu li {
-    margin-right: 80px;
-}
-
-.social-menu li a {
-    text-decoration: none;
-    color: #008080;
-}
-
-.social-menu li:hover {
-    cursor: pointer;
+.desktop {
+    display: none;
 }
 
 .search {
@@ -39,7 +7,7 @@
     border-radius: 18px;
     border: 2.8px solid rgba(255, 255, 255, .5);
     padding: 8px 12px;
-    width: 240px;
+    width: 190px;
     color: rgba(255, 255, 255, .5);
 }
 
@@ -53,14 +21,96 @@
     padding: 9px 9px;
     border-radius: 50%;
     position: relative;
-    right: 38px;
+    right: 40px;
 }
 
 .btn:hover {
     cursor: pointer;
 }
 
-.img-giphy {
-    width: 90px;
-    border-radius: 11px;
+.gh-in {
+    color: #008080 !important;
+}
+
+@media (min-width: 600px) {
+    .mobile {
+        display: none;
+    }
+    
+    .desktop {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .header {
+        background: #1b4f72;
+        padding: 5px 20px;
+        height: 65px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar-form {
+        margin-right: 310px;
+    }
+
+
+    .social-menu {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        position: relative;
+        top: 8px;
+    }
+
+    .social-menu li {
+        margin-right: 80px;
+    }
+
+    .social-menu li a {
+        text-decoration: none;
+        color: #008080;
+    }
+
+    .social-menu li:hover {
+        cursor: pointer;
+    }
+
+    .search {
+        background: transparent;
+        border-radius: 18px;
+        border: 2.8px solid rgba(255, 255, 255, .5);
+        padding: 8px 12px;
+        width: 290px;
+        color: rgba(255, 255, 255, .5);
+    }
+    
+    .search:focus-visible {
+        outline: none;
+    }
+    
+    .btn {
+        background: #fff;
+        border: none;
+        color: #1a5fb4;
+        padding: 10px 12px;
+        border-radius: 50%;
+        position: relative;
+        right: 40px;
+    }
+    
+    .btn:hover {
+        cursor: pointer;
+    }
+    
+    .img-giphy {
+        width: 90px;
+        border-radius: 11px;
+    }
+   
 }
