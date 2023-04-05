@@ -1,0 +1,19 @@
+.card-gif {
+    background: #1b4f72;
+    width: min-content;
+    padding: 8px 12px;
+    margin: 34px 48px;
+    border-radius: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+.card-gif img {
+    width: 280px;
+    border-radius: 24px;
+}
+
+.gifs-container {
+    display: flex;
+    flex-wrap: wrap;
+}
